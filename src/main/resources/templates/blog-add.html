@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Добавление статьи</h1>
+    <form action="/blog/add" method="post">
+        <input type="text" name="title" placeholder="Введите название статьи" class="form-control"><br>
+        <input type="text" name="anons" placeholder="Введите анонс статьи" class="form-control"><br>
+        <textarea name="full_text" placeholder="Введите полный текст статьи" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Добавить статью</button>
+    </form>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+<img class="bd-placeholder-img card-img-top" width="100%" height="225" th:src="@{/images/image3.jpg}"/>
+<h1 th:text="${title}"/>
+</body>
+</html>
